@@ -1,0 +1,9 @@
+/* MENOR WIDTH */
+@media (max-width: 767.98px)
+{
+    #main .button
+    {
+        width: 400px;
+    }
+}
+  

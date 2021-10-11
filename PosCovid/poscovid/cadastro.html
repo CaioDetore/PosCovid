@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/owl/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>PosCovid - Relatar Problema</title>
+
+</head>
+<body>
+    <!-- COMEÇO HEADER -->
+    <header id="header" class="">
+
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--preto);">
+
+                <img src="img/logo-nobg2.png" class="image-fluid" height="67">
+                <a class="nav-link active" aria-current="page" href="index.html"> <span> PósCovid.com </span> </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="justify-content-end collapse navbar-collapse" id="navbarNav">
+    
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html" title="Clique para saber o que é o covid 19"> Covid: O que é? </a>
+                      </li>
+      
+                      <li class="nav-item">
+                        <a class="nav-link" href="index.html">Pós-Covid: O que é</a>
+                      </li>
+      
+                      <li class="nav-item">
+                        <a class="nav-link" href="cadastro.html" title="Clique para relatar seus problemas do pós-covid!">Relate Seus Problemas</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="ficha.php" title="Clique para ver sua ficha">Minha ficha</a>
+                      </li>
+      
+                      <li class="nav-item">
+                        <a class="nav-link" href="login.html" title="Possui uma conta? Acesse clicando aqui.">Entrar</a>
+                      </li>
+
+                    </ul>
+      
+                </div>
+            </nav>
+    </header>
+
+    <!-- FIM HEADER -->
+
+    <!-- FORMULÁRIO -> usuário -->
+    <div id="formulario">
+      <div class="container pt-5">
+
+        <h1 class="title text-center"> Relate seus problemas aqui! </h1>
+        <h2 class="subtitle text-center"> Insira as informações abaixos e clique em Relatar Problema. </h2>
+
+        <form class="pt-5" action="model/cad_model.php" method="POST">
+          <div class="mb-3">
+            <label for="nome" class="form-label">Primeiro Nome: </label>
+            <input type="text" class="form-control" id="nome" name="nome_usuario" title="Digite seu primeiro nome. Ex: João" required>
+          </div>
+          <div class="mb-3">
+            <label for="sobrenome" class="form-label">Sobrenome: </label>
+            <input type="text" class="form-control" id="sobrenome" name="sobrenome_usuario" title="Digite seu sobrenome. Ex: Pereira" required>
+          </div>
+          <div class="mb-3">
+            <label for="nascimento" class="form-label">Data de Nascimento: </label>
+            <input type="date" class="form-control" id="nascimento" name="data_nascimento" required>
+          </div>
+          <div class="mb-3">
+            <label for="celular" class="form-label">Celular: </label>
+            <input type="number" class="form-control" id="celular" name="celular" title="Digite o seu número de celular. Apenas números">
+          </div>
+          <div class="mb-3">
+            <label for="cidade" class="form-label">Cidade: </label>
+            <input type="text" class="form-control" id="cidade" name="cidade" title="Digite o nome de sua cidade." required>
+          </div>
+          <div class="mb-3">
+            <label for="estado" class="form-label">Estado: </label>
+            <select  class="form-select" id="estado" name="estado" title="Selecione o seu estado." required>
+              <option value="">Selecione</option>
+              <option value="AC">Acre</option>
+              <option value="AL">Alagoas</option>
+              <option value="AP">Amapá</option>
+              <option value="AM">Amazonas</option>
+              <option value="BA">Bahia</option>
+              <option value="CE">Ceará</option>
+              <option value="DF">Distrito Federal</option>
+              <option value="ES">Espirito Santo</option>
+              <option value="GO">Goiás</option>
+              <option value="MA">Maranhão</option>
+              <option value="MS">Mato Grosso do Sul</option>
+              <option value="MT">Mato Grosso</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PA">Pará</option>
+              <option value="PB">Paraíba</option>
+              <option value="PR">Paraná</option>
+              <option value="PE">Pernambuco</option>
+              <option value="PI">Piauí</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <option value="RO">Rondônia</option>
+              <option value="RR">Roraima</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="SP">São Paulo</option>
+              <option value="SE">Sergipe</option>
+              <option value="TO">Tocantins</option>
+            </select>
+          </div>
+
+          <!-- ENDEREÇO PESSOAL NÃO UTILIZADO 
+          <div class="mb-3">
+            <label for="bairro" class="form-label">Bairro: </label>
+            <input type="text" class="form-control" id="bairro" title="Digite o nome de seu bairro.">
+          </div>
+          <div class="mb-3">
+            <label for="rua" class="form-label">Rua: </label>
+            <input type="text" class="form-control" id="rua" title="Digite o nome de sua rua.">
+          </div>
+          <div class="mb-3">
+            <label for="bairro" class="form-label">Número: </label>
+            <input type="text" class="form-control" id="bairro" title="Digite o nome de seu bairro.">
+          </div>
+          -->
+
+          <!-- PARA O LOGIN -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" title="Digite seu email. Isso será utilizado para acessar sua conta." required>
+            <div id="emailHelp" class="form-text">Seu email será utilizado para você acessar sua conta.</div>
+          </div>
+          <div class="mb-3">
+            <label for="senha" class="form-label">Senha: </label>
+            <input type="password" class="form-control" id="senha" name="senha" title="Cuidado, não possuimos recuperação de senha...">
+          </div>
+
+          <!-- SINTOMAS isso vai pra tabela ficha -->
+          <h3 class="subtitle"> Responda os sintomas que está sentindo abaixo: </h3>
+
+          <hr>
+
+          <div class="mb-3  ">
+            <h4> Fadiga </h4>
+            <input type="radio" id="lbfadiga" name="fadiga" value="true">  
+            <label for="lbfadiga"> <h5> Sim </h5>  </label>
+            <input type="radio" id="lbfadigan" name="fadiga" value="false"> 
+            <label for="lbfadigan"><h5> Não </h5></label>
+          </div>
+
+          <hr>
+
+          <div class="mb-3  ">
+            <h4> Falta de ar </h4>
+            <input type="radio" id="lbfalta_de_ar" name="falta_de_ar" value="true">  
+            <label for="lbfalta_de_ar"> <h5> Sim </h5>  </label>
+            <input type="radio" id="lbfalta_de_arn" name="falta_de_ar" value="false"> 
+            <label for="lbfalta_de_arn"><h5> Não </h5></label>
+          </div>
+
+          <hr>
+          
+          <div class="mb-3  ">
+            <h4> Dor de cabeça </h4>
+            <input type="radio" id="lbfdor_cabeca" name="dor_cabeca" value="true">  
+            <label for="lbdor_cabeca"> <h5> Sim </h5>  </label>
+            <input type="radio" id="lbdor_cabecan" name="dor_cabeca" value="false"> 
+            <label for="lbdor_cabecan"><h5> Não </h5></label>
+          </div>
+
+          <hr>
+          
+          <div class="mb-3  ">
+            <h4> Dor muscular </h4>
+            <input type="radio" id="lbdor_muscular" name="dor_muscular" value="true">  
+            <label for="lbdor_muscular"> <h5> Sim </h5>  </label>
+            <input type="radio" id="lbdor_muscularn" name="dor_muscular" value="false"> 
+            <label for="lbdor_muscularn"><h5> Não </h5></label>
+          </div>
+
+          <hr>
+
+          <div class="mb-3  ">
+            <h4> Queda de cabelo </h4>
+            <input type="radio" id="lbqueda_cabelo" name="queda_cabelo" value="true">  
+            <label for="lbqueda_cabelo"> <h5> Sim </h5>  </label>
+            <input type="radio" id="lbqueda_cabelon" name="queda_cabelo" value="false"> 
+            <label for="lbqueda_cabelon"><h5> Não </h5></label>
+          </div>
+
+          <hr>
+
+          <div class="mb-3  ">
+            <h4> Perca de paladar e olfato </h4>
+            <input type="radio" id="lbpaladar_olfato" name="paladar_olfato" value="true">  
+            <label for="lbpaladar_olfato"> <h5> Sim </h5>  </label>
+            <input type="radio" id="lbpaladar_olfaton" name="paladar_olfato" value="false"> 
+            <label for="lbpaladar_olfaton"><h5> Não </h5></label>
+          </div>
+
+          <hr>
+
+          <div class="mb-3  ">
+            <h4> Dor no peito </h4>
+            <input type="radio" id="lbdor_peito" name="dor_peito" value="true">  
+            <label for="lbdor_peito"> <h5> Sim </h5>  </label>
+            <input type="radio" id="lbdor_peiton" name="dor_peito" value="false"> 
+            <label for="lbdor_peiton"><h5> Não </h5></label>
+          </div>
+
+          <hr>
+
+          <div class="mb-3  ">
+            <h4> Tontura </h4>
+            <input type="radio" id="lbtontura" name="tontura" value="true">  
+            <label for="lbtontura"> <h5> Sim </h5>  </label>
+            <input type="radio" id="lbtonturan" name="tontura" value="false"> 
+            <label for="lbtonturan"><h5> Não </h5></label>
+          </div>
+
+          <hr>
+
+          <div class="mb-3  ">
+            <h4> Tromboses </h4>
+            <input type="radio" id="lbtromboses" name="tromboses" value="true">  
+            <label for="lbtromboses"> <h5> Sim </h5>  </label>
+            <input type="radio" id="lbtrombosesn" name="tromboses" value="false"> 
+            <label for="lbtrombosesn"><h5> Não </h5></label>
+          </div>
+
+          <hr>
+
+          <div class="mb-3  ">
+            <h4> Palpitacao </h4>
+            <input type="radio" id="lbpalpitacao" name="palpitacao" value="true">  
+            <label for="lbpalpitacao"> <h5> Sim </h5>  </label>
+            <input type="radio" id="lbpalpitacaon" name="palpitacao" value="false"> 
+            <label for="lbpalpitacaon"><h5> Não </h5></label>
+          </div>
+
+          <hr>
+
+          <div class="mb-3  ">
+            <h4> Depressao e ansiedade </h4>
+            <input type="radio" id="lbdepressao_ansiedade" name="depressao_ansiedade" value="true">  
+            <label for="lbdepressao_ansiedade"> <h5> Sim </h5>  </label>
+            <input type="radio" id="lbdepressao_ansiedaden" name="depressao_ansiedade" value="false"> 
+            <label for="lbdepressao_ansiedaden"><h5> Não </h5></label>
+          </div>
+
+          <hr>
+
+          <div class="mb-3">
+            <label for="outros" class="form-label">Outros sintomas: </label>
+            <input type="text" class="form-control" id="outros" name="outros" title="Digite outras coisas que você esta sentindo.">
+          </div>
+          <!-- FIM SINTOMAS -->
+          <button type="submit" class="mb-lg-3 button btn btn-primary button-primary d-md-inline-block mb-md-3 mb-2 mr-md-2 mb-3"> Cadastrar-se e relatar problemas </button>
+        </form>
+
+      </div>
+    </div>
+    <!-- FIM FORMULÁRIO -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
